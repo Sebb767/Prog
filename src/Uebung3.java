@@ -8,9 +8,11 @@ public class Uebung3 {
     public static void main()
     {
 
+        zeichenanalyse();
     }
 
 
+    // Aufgabe 3
     public static void zeichenanalyse()
     {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -36,5 +38,21 @@ public class Uebung3 {
             System.out.print(ausgabe);
     }
 
+    // Aufgabe 4
+    public static void Wuerfel()
+    {
+        int wurf = (int)Math.floor(Math.random() * 6.);
+
+        String[] ausgabe = new String[] {
+                "Eins",
+                "Zwei",
+                "Drei",
+                "Vier",
+                "Fünf",
+                "Sechs"
+        };
+
+        System.out.println(ausgabe[wurf] + " gewürfelt.");
+    }
 
 }
