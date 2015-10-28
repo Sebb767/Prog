@@ -9,45 +9,23 @@ public class Main {
 
         CmdParser cmdp = new CmdParser();
 
-        for(String arg : args)
-        {
-            cmdp.add(() -> { app.print(); }, "print", "p");
-            cmd.add(() ->  app.math(), "math", "m");
-            //else if(arg.equals("-pm") || arg.equals("-mp"))
-                //print = math = true;
-            else if(arg.equals("-t") || arg.equals("--tausch"))
-                tausch = true;
-            else if(arg.equals("-r") || arg.equals("--radius"))
-                radius = true;
-            else if(arg.equals("-k") || arg.equals("--kugel"))
-                kugel = true;
-            else if(arg.equals("-i") || arg.equals("--sonstwas"))
-                irgendwiemathe = true;
-            else if(arg.equals("-d") || arg.equals("--datum"))
-                datum = true;
-            else if (!arg.equals(args[0]))
-                System.out.println("Unknown arg: "+arg);
-        }
+        // Übung 1
+        cmdp.add(() -> app.print(), "print", "p");
+        cmdp.add(() -> app.math(), "math", "m");
 
-        if(print)
-            app.print();
-        if(math)
+        // Übung 2
+        cmdp.add(() -> t.tausch(), "tausch", "t");
+        cmdp.add(() -> app.radius(Math.E), "radius", "r");
+        cmdp.add(() -> app.kugel(Math.E), "kugel", "k");
+        cmdp.add(() -> app.IrgendeineGleichung(42, 11), "sonstwas", "i");
+        cmdp.add(() -> app.Datumszeug(), "datum", "d");
 
-        if(tausch)
-        {
+        // Übung 3
+        cmdp.add(() -> Uebung3.Sieben(), "u3a1", "7");
+        cmdp.add(() -> Uebung3.Pizzarechner(), "u3a2", "P");
+        cmdp.add(() -> Uebung3.zeichenanalyse(), "u3a3", "z");
+        cmdp.add(() -> Uebung3.Wuerfel(), "u3a4", "w");
 
-            t.tausch();
-        }
-        if (radius)
-            app.radius(Math.E);
-        if(kugel)
-            app.kugel(Math.E);
-        if(irgendwiemathe)
-            app.IrgendeineGleichung(42, 11);
-        if(datum)
-            app.Datumszeug();
-
-        if(!math && !print && !tausch)
-            System.out.println("Usage: " + args[0] + " -m|--math -p|--print -t|--tausch");
+        cmdp.parse(args);
     }
 }
