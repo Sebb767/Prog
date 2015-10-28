@@ -9,7 +9,7 @@ public class Uebung3 {
     public static void main(String[] Args)
     {
         Sieben();
-
+        Pizzarechner();
         zeichenanalyse();
         Wuerfel();
     }
@@ -35,7 +35,7 @@ public class Uebung3 {
                 System.out.print((i%1==0 ? "Durchmesser" : "Preis") + ": ");
                 p[i] = Double.parseDouble((new BufferedReader(new InputStreamReader(System.in))).readLine());
             }
-            System.out.println("Pizza " + ((int)Math.ceil(((2*Math.PI*p[0]*p[0])/p[1])-((2*Math.PI*p[2]*p[2])/p[3])) + 1) + " ist besser.");
+            System.out.println("Pizza " + (((((2*Math.PI*p[0]*p[0])/p[1])-((2*Math.PI*p[2]*p[2])/p[3])) + "").indexOf("-") + 2) + " ist besser.");
         }
         catch (Exception e) {} // idc
     }
