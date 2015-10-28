@@ -5,7 +5,7 @@ import java.io.*;
  */
 public class Uebung3 {
 
-    public static void main()
+    public static void main(String[] Args)
     {
         Sieben();
         zeichenanalyse();
@@ -15,6 +15,7 @@ public class Uebung3 {
     // Aufgabe 1
     public static void Sieben()
     {
+        System.out.print("Eine Zahl eingeben: ");
         try {
             System.out.println("Die Eingabe ist "+(Integer.parseInt((new BufferedReader(new InputStreamReader(System.in))).readLine())%7==0?"":"nicht ")+"durch 7 teilbar.");
         }
@@ -25,6 +26,7 @@ public class Uebung3 {
     // Aufgabe 3
     public static void zeichenanalyse()
     {
+        System.out.print("Ein Zeichen eingeben: ");
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             char eingabe = (char)br.read();

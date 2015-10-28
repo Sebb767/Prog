@@ -5,17 +5,14 @@ public class Main {
 
     public static void main(String[] args) {
         Application app = new Application();
+        Tausch t = new Tausch();
 
-        boolean math = false, print = false, tausch = false,
-            radius = false, kugel = false, irgendwiemathe = false,
-            datum = false;
+        CmdParser cmdp = new CmdParser();
 
         for(String arg : args)
         {
-            if(arg.equals( "-p") || arg.equals("--print"))
-                print = true;
-            else if (arg.equals("-m") || arg.equals("--math"))
-                math = true;
+            cmdp.add(() -> { app.print(); }, "print", "p");
+            cmd.add(() ->  app.math(), "math", "m");
             //else if(arg.equals("-pm") || arg.equals("-mp"))
                 //print = math = true;
             else if(arg.equals("-t") || arg.equals("--tausch"))
@@ -35,10 +32,10 @@ public class Main {
         if(print)
             app.print();
         if(math)
-            app.math();
+
         if(tausch)
         {
-            Tausch t = new Tausch();
+
             t.tausch();
         }
         if (radius)

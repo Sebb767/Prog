@@ -50,7 +50,7 @@ public class Application { // Übung 1+2
     public void Datumszeug()
     {
         LocalTime stunden = LocalTime.now(),
-                minuten  = LocalTime.now(),
+                minuten = LocalTime.now(),
                 sekunden  = LocalTime.now(); // ?
 
         // a)
