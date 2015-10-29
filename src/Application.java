@@ -1,7 +1,4 @@
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZonedDateTime;
+import java.time.*;
 
 public class Application { // Übung 1+2
 

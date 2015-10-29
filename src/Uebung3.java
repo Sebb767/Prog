@@ -62,10 +62,7 @@ public class Uebung3 {
             if("012345678".indexOf(eingabe) != -1)
                 ausgabe += ("oktale Ziffer\n");
 
-            if(ausgabe.length() == 1)
-                System.out.println("\nUnbekannt");
-            else
-                System.out.print(ausgabe);
+            System.out.println(ausgabe.length() == 1 ? "\nUnbekannt" : ausgabe);
         }
         catch (Exception e) {} // idc
     }
