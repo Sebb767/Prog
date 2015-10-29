@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.Scanner;
 import java.util.stream.IntStream;
 
 /**
@@ -19,7 +20,7 @@ public class Uebung3 {
     {
         System.out.print("Eine Zahl eingeben: ");
         try {
-            System.out.println("Die Eingabe ist "+(Integer.parseInt((new BufferedReader(new InputStreamReader(System.in))).readLine())%7==0?"":"nicht ")+"durch 7 teilbar.");
+            System.out.println("Die Eingabe ist "+((new Scanner(System.in)).nextInt()%7==0?"":"nicht ")+"durch 7 teilbar.");
         }
         catch (Exception e) {} // idc
     }
@@ -32,8 +33,8 @@ public class Uebung3 {
             double p[] = new double[4];
             for(int i : new int[]{0,1,2,3})
             {
-                System.out.print((i%1==0 ? "Durchmesser" : "Preis") + ": ");
-                p[i] = Double.parseDouble((new BufferedReader(new InputStreamReader(System.in))).readLine());
+                System.out.print((i%2==0 ? "Durchmesser" : "Preis") + ": ");
+                p[i] = (new Scanner(System.in)).nextDouble();
             }
             System.out.println("Pizza " + (((((2*Math.PI*p[0]*p[0])/p[1])-((2*Math.PI*p[2]*p[2])/p[3])) + "").indexOf("-") + 2) + " ist besser.");
         }
@@ -45,8 +46,7 @@ public class Uebung3 {
         {
             System.out.print("Ein Zeichen eingeben: ");
         try {
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            char eingabe = (char)br.read();
+            char eingabe = (char)System.in.read();
 
             String ausgabe = "\n";
 
