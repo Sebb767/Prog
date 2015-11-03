@@ -70,7 +70,7 @@ public class Uebung3 {
     // Aufgabe 4
     public static void Wuerfel()
     {
-        int wurf = (int)Math.floor(Math.random() * 6.);
+        int wurf = (int)(Math.random() * 6.);
 
         String[] ausgabe = new String[] {
                 "Eins",
