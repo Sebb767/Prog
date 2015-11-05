@@ -1,6 +1,4 @@
-import java.io.*;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 /**
  * Created by sebb on 10/28/15.
@@ -59,7 +57,7 @@ public class Uebung3 {
             if(eingabe == '0' || eingabe == '1')
                 ausgabe += ("binäre Ziffer\n");
 
-            if("012345678".indexOf(eingabe) != -1)
+            if("01234567".indexOf(eingabe) != -1)
                 ausgabe += ("oktale Ziffer\n");
 
             System.out.println(ausgabe.length() == 1 ? "\nUnbekannt" : ausgabe);
