@@ -62,11 +62,10 @@ public class Uebung4 {
         int n = (new Scanner(System.in)).nextInt();
 
         for (int i = 2; i < (int)Math.sqrt(n); i++) {
-            if(n % i != 0)
-                continue;
-
-            System.out.printf("Untersuchte Zahl ist keine Primzahl.\n");
-            return;
+            if(n % i == 0) { // teilbar
+                System.out.printf("Untersuchte Zahl ist keine Primzahl.\n");
+                return;
+            }
         }
 
         System.out.printf("Untersuchte Zahl ist eine Primzahl.\n");
