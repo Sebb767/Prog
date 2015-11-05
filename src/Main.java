@@ -4,6 +4,7 @@
 public class Main {
 
     public static void main(String[] args) {
+
         Application app = new Application();
         Tausch t = new Tausch();
 
@@ -25,6 +26,13 @@ public class Main {
         cmdp.add(() -> Uebung3.Pizzarechner(), "u3a2", "P");
         cmdp.add(() -> Uebung3.zeichenanalyse(), "u3a3", "z");
         cmdp.add(() -> Uebung3.Wuerfel(), "u3a4", "w");
+
+        // Übung 4
+        cmdp.add(() -> Uebung4.Fallgeschwindigkeit_a(), "u4a1a");
+        cmdp.add(() -> Uebung4.Fallgeschwindigkeit_b(), "u4a1b");
+        cmdp.add(() -> Uebung4.Reihe(), "u4a2");
+        cmdp.add(() -> Uebung4._1x1(), "u4a3");
+        cmdp.add(() -> Uebung4.isPrime(), "u4a4");
 
         cmdp.parse(args);
     }
