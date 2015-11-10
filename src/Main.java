@@ -34,6 +34,12 @@ public class Main {
         cmdp.add(() -> Uebung4._1x1(), "u4a3");
         cmdp.add(() -> Uebung4.isPrime(), "u4a4");
 
+        // Übung 5
+        cmdp.add(() -> Uebung5.Temperaturtabelle(), "u5a1");
+        //cmdp.add(() -> Uebung4.Reihe(), "u5a2");
+        //cmdp.add(() -> Uebung4._1x1(), "u5a3");
+        //cmdp.add(() -> Uebung4.isPrime(), "u5a4");
+
         cmdp.parse(args);
     }
 }
