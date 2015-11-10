@@ -45,4 +45,23 @@ public class Uebung5 {
 
         System.out.printf("Das Querprodukt der Zahl %d betraegt %d.\n", in, querprodukt);
     }
+
+    // Aufgabe 4
+    public static void Potenz()
+    {
+        System.out.print("Bitte geben Sie die Basis ein: ");
+        double a = (new Scanner(System.in)).nextDouble(),
+            ergebnis = 1;
+
+        System.out.print("Bitte geben Sie den Exponent ein: ");
+        int b = (new Scanner(System.in)).nextInt();
+
+        for (int i = 0; i < b; i++)
+            ergebnis *= a;
+
+        if(b < 0)
+            ergebnis = 1 / ergebnis;
+
+        System.out.println("Das Ergebnis ist: "+ergebnis);
+    }
 }

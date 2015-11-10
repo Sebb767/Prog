@@ -36,9 +36,9 @@ public class Main {
 
         // Übung 5
         cmdp.add(() -> Uebung5.Temperaturtabelle(), "u5a1");
-        //cmdp.add(() -> Uebung4.Reihe(), "u5a2");
-        //cmdp.add(() -> Uebung4._1x1(), "u5a3");
-        //cmdp.add(() -> Uebung4.isPrime(), "u5a4");
+        cmdp.add(() -> Uebung5.Querprodukt(), "u5a2");
+        //cmdp.add(() -> _, "u5a3"); // schriftlich :(
+        cmdp.add(() -> Uebung5.Potenz(), "u5a4");
 
         cmdp.parse(args);
     }
