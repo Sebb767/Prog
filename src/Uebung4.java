@@ -61,7 +61,7 @@ public class Uebung4 {
         System.out.print("Bitte zu untersuchende Zahl eingeben: ");
         int n = (new Scanner(System.in)).nextInt();
 
-        for (int i = 2; i < (int)Math.sqrt(n); i++) {
+        for (int i = 2; i <= (int)Math.sqrt(n); i++) {
             if(n % i == 0) { // teilbar
                 System.out.printf("Untersuchte Zahl ist keine Primzahl.\n");
                 return;
