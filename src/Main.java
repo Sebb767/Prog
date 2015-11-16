@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /**
  * Created by sebb on 10/15/15.
  */
@@ -40,6 +42,61 @@ public class Main {
         //cmdp.add(() -> _, "u5a3"); // schriftlich :(
         cmdp.add(() -> Uebung5.Potenz(), "u5a4");
 
+        // Übung 6
+        cmdp.add(() -> System.out.println(
+                Uebung6.PiAnnaeherung(getInt("Anzahl der Vierecke"))
+        ), "u6a1");
+        cmdp.add(() -> System.out.println(
+                Uebung6.round(getDouble("Zu rundende Zahl"))
+        ), "u6a2a");
+        cmdp.add(() -> System.out.println(
+                Uebung6.round(getDouble("Zu rundende Zahl"), getInt("Nachkommastellen"))
+        ), "u6a2b");
+        cmdp.add(() -> System.out.println(
+                Uebung6.fakultaet(getInt("Basis für die Fakulatät"))
+        ), "u6a3");
+        cmdp.add(() -> Uebung6.Dreieck(getInt("Höhe für das Dreieck")), "u6a4");
+
         cmdp.parse(args);
+    }
+
+    public static double getDouble(String prompt)
+    {
+        Scanner sc = new Scanner(System.in);
+        double in;
+        do {
+            try
+            {
+                System.out.print(prompt + ": ");
+                in = sc.nextDouble();
+                break;
+            }
+            catch (Exception e)
+            {
+                System.out.println("Fehler - bitte einen gültigen double eingeben.");
+            }
+        } while(true);
+
+        return in;
+    }
+
+    public static int getInt(String prompt)
+    {
+        Scanner sc = new Scanner(System.in);
+        int in;
+        do {
+            try
+            {
+                System.out.print(prompt + ": ");
+                in = sc.nextInt();
+                break;
+            }
+            catch (Exception e)
+            {
+                System.out.println("Fehler - bitte einen gültigen double eingeben.");
+            }
+        } while(true);
+
+        return in;
     }
 }
