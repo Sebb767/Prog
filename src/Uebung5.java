@@ -40,8 +40,10 @@ public class Uebung5 {
 
         } while (in < 0 || in > 1000000); // the clause is actually useless. But - while(true) is bad.
 
-        for(int rest = in; rest > 0; rest /= 10)
-            querprodukt *= rest%10;
+        if(in == 0)
+		querprodukt = 0;
+	else for(int rest = in; rest > 0; rest /= 10)
+            		querprodukt *= rest%10;
 
         System.out.printf("Das Querprodukt der Zahl %d betraegt %d.\n", in, querprodukt);
     }
