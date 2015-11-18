@@ -58,7 +58,7 @@ public class Uebung5 {
         System.out.print("Bitte geben Sie den Exponent ein: ");
         int b = (new Scanner(System.in)).nextInt();
 
-        for (int i = 0; i < b; i++)
+        for (int i = 0; i < Math.abs(b); i++)
             ergebnis *= a;
 
         if(b < 0)
