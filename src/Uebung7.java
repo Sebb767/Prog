@@ -38,10 +38,13 @@ public class Uebung7 {
     }
 
     // Aufgabe 1
-    public static int exp(int basis, int zaehler)
+    public static double exp(double basis, int zaehler)
     {
         if(zaehler == 0)
             return 1;
+
+        if(zaehler < 0)
+            return 1./exp(basis, -zaehler);
 
         return exp(basis, zaehler -1) * basis;
     }
@@ -58,8 +61,36 @@ public class Uebung7 {
     }
 
     // Aufgabe 3/4
-    public static void Notenspiegel(boolean extended)
+    public static void Messreihe(boolean extended)
     {
+        Scanner s = new Scanner(System.in);
+        System.out.print("Anzahl der einzulesenden Werte: ");
 
+        int c = s.nextInt(); // anzahl
+
+        if(c < 1)
+        {
+            System.out.println("Fehler: Zu wenige Werte.");
+            return;
+        }
+
+        double[] n = new double[c]; // noten
+        double min = Double.MAX_VALUE, max = Double.MIN_VALUE, m = 0; // min, max, mittel
+
+        for (int i = 0; i < c; i++) {
+            System.out.print((i + 1) + ". Wert: ");
+            n[i] = s.nextDouble();
+
+            min = n[i] < min ? n[i] : min;
+            max = n[i] > max ? n[i] : max;
+            m += n[i];
+        }
+
+        System.out.printf("Kleinster Wert: %.2f\nGrößter Wert: %.2f\nArithmetischer Mittelwer: %.2f\n", min, max, m/c);
+
+        if(extended) // A4
+        {
+
+        }
     }
 }

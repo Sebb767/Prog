@@ -64,8 +64,8 @@ public class Main {
         cmdp.add(() -> System.out.println(
                 Uebung7.sin(getDouble("Bitte geben Sie x ein"))
         ), "u7a2");
-        cmdp.add(() -> Uebung7.Notenspiegel(false), "u7a3");
-        cmdp.add(() -> Uebung7.Notenspiegel(true), "u7a4");
+        cmdp.add(() -> Uebung7.Messreihe(false), "u7a3");
+        cmdp.add(() -> Uebung7.Messreihe(true), "u7a4");
 
         cmdp.parse(args);
     }
