@@ -57,6 +57,16 @@ public class Main {
         ), "u6a3");
         cmdp.add(() -> Uebung6.Dreieck(getInt("Höhe für das Dreieck")), "u6a4");
 
+        // Übung 7
+        cmdp.add(() -> System.out.println(
+                Uebung7.exp(getInt("Bitte geben Sie die Basis ein"), getInt("Bitte geben Sie den Exponenten ein"))
+        ), "u7a1");
+        cmdp.add(() -> System.out.println(
+                Uebung7.sin(getDouble("Bitte geben Sie x ein"))
+        ), "u7a2");
+        cmdp.add(() -> Uebung7.Notenspiegel(false), "u7a3");
+        cmdp.add(() -> Uebung7.Notenspiegel(true), "u7a4");
+
         cmdp.parse(args);
     }
 
