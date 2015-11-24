@@ -48,9 +48,9 @@ public class Uebung6 {
     // Aufgabe 4
     public static void Dreieck(int hoehe)
     {
-        for (int i = 1; i <= hoehe; i++) {
+        for (int i = hoehe < 0 ? Math.abs(hoehe) +1 : 0; hoehe < 0 ? --i > 0 : ++i <= hoehe ;) {
             System.out.println(
-                new String(new char[hoehe-i]).replace("\0", " ") +
+                new String(new char[Math.abs(hoehe)-i]).replace("\0", " ") +
                 new String(new char[i*2]).replace("\0\0", "* ")
             );
         }
