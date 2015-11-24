@@ -36,9 +36,9 @@ public class Uebung6 {
     }
 
     // Aufgabe 3
-    public static int fakultaet(int base)
+    public static double fakultaet(int base)
     {
-        int res = base;
+        double res = base;
         while(--base > 0)
             res *= base;
 
