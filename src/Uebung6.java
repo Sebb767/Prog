@@ -3,10 +3,20 @@
  */
 public class Uebung6 {
 
-    // Aufgabe 1 (Platzhalter)
+    // Aufgabe 1
     public static double PiAnnaeherung(int rechtecke)
     {
-        return 0;
+        if(rechtecke <1)
+            return -1;
+        else if(rechtecke == 1)
+            return 1;
+
+        double fl = 0, x = (1./rechtecke); // fläche
+
+        for (int i = 1; i <= rechtecke; i++)
+            fl += x * Math.sqrt(1 - pow(i*x, 2));
+
+        return (4*fl);
     }
 
     // Aufgabe 2 a
@@ -19,15 +29,13 @@ public class Uebung6 {
     // Aufgabe 2 b
     public static double round(double in, int precision)
     {
-        in *= pow(10, precision);
-
-        return ((long)in) / (double)pow(10, precision);
+        return ((long)pow(10, precision)) / pow(10, precision);
     }
 
     // Helfer zu 2b
-    public static int pow(int base, int exp)
+    public static double pow(double base, int exp)
     {
-        int res = 1;
+        double res = 1;
 
         for (int i = 0; i < exp; i++)
             res *= base;
