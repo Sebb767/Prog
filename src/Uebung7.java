@@ -75,11 +75,7 @@ public class Uebung7 {
         }
 
         double[] n = new double[c]; // noten
-<<<<<<< HEAD
         double min = Double.MAX_VALUE, max = Double.MIN_VALUE, m = 0, u = 0; // min, max, mittel, stdabweichung
-=======
-        double min = Double.MAX_VALUE, max = Double.MIN_VALUE, m = 0; // min, max, mittel
->>>>>>> 52373b43045af4cb45e878d00f259e077f1ad6a8
 
         for (int i = 0; i < c; i++) {
             System.out.print((i + 1) + ". Wert: ");
@@ -89,8 +85,7 @@ public class Uebung7 {
             max = n[i] > max ? n[i] : max;
             m += n[i];
         }
-
-<<<<<<< HEAD
+        
         m /= c;
 
         System.out.printf("Kleinster Wert: %.2f\nGrößter Wert: %.2f\nArithmetischer Mittelwer: %.2f\n", min, max, m);
@@ -99,13 +94,6 @@ public class Uebung7 {
         {
             for (int i = 0; i < c; i++) u += exp(n[i] - m,2);
             System.out.printf("Standardabweichung: %.2f\n", Math.sqrt(u/n.length));
-=======
-        System.out.printf("Kleinster Wert: %.2f\nGrößter Wert: %.2f\nArithmetischer Mittelwer: %.2f\n", min, max, m/c);
-
-        if(extended) // A4
-        {
-
->>>>>>> 52373b43045af4cb45e878d00f259e077f1ad6a8
         }
     }
 }
