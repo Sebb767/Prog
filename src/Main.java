@@ -67,6 +67,14 @@ public class Main {
         cmdp.add(() -> Uebung7.Messreihe(false), "u7a3");
         cmdp.add(() -> Uebung7.Messreihe(true), "u7a4");
 
+        // Übung 8
+        cmdp.add(() -> Uebung8.Lottoziehung(), "u8a1");
+        cmdp.add(() -> System.out.println(
+                Uebung8.spielen(getString("Wort zum verunstalten"))
+        ), "u8a2");
+        cmdp.add(() -> Uebung8.main(new String[] { getInt("Zahl 1") + "", getInt("Zahl 2") + "" }), "u8a3");
+        cmdp.add(() -> Uebung8.Galgenmaenchen(), "u8a4");
+
         cmdp.parse(args);
     }
 
@@ -108,5 +116,12 @@ public class Main {
         } while(true);
 
         return in;
+    }
+
+    public static String getString(String prompt)
+    {
+        System.out.print(prompt + ": ");
+        return (new Scanner(System.in)).next();
+
     }
 }
