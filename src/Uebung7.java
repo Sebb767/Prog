@@ -54,8 +54,10 @@ public class Uebung7 {
     {
         double summe = 0;
 
-        for (int k = 0; k < 100; k++)
-            summe += exp(-1, k) * ( Math.pow(x, 2 * k + 1) / Uebung6.fakultaet(2 * k +1) );
+        for (int k = 0; k < 100; k++) {
+            System.out.printf("f(%d) = %.2f\n",k, exp(-1, k) * (Math.pow(x, 2 * k + 1) / Uebung6.fakultaet(2 * k + 1)));
+            summe += exp(-1, k) * (Math.pow(x, 2 * k + 1) / Uebung6.fakultaet(2 * k + 1));
+        }
 
         return summe;
     }
@@ -66,7 +68,7 @@ public class Uebung7 {
         Scanner s = new Scanner(System.in);
         System.out.print("Anzahl der einzulesenden Werte: ");
 
-        int c = s.nextInt(); // anzahl
+        int c = s.nextInt(), i; // anzahl
 
         if(c < 1)
         {
@@ -75,24 +77,24 @@ public class Uebung7 {
         }
 
         double[] n = new double[c]; // noten
-        double min = Double.MAX_VALUE, max = Double.MIN_VALUE, m = 0, u = 0; // min, max, mittel, stdabweichung
+        double v = Double.MAX_VALUE, b = Double.MIN_VALUE, m = 0, u = 0; // v, b, mittel, stdabweichung
 
-        for (int i = 0; i < c; i++) {
+        for (i = 0; i < c; i++) {
             System.out.print((i + 1) + ". Wert: ");
             n[i] = s.nextDouble();
 
-            min = n[i] < min ? n[i] : min;
-            max = n[i] > max ? n[i] : max;
+            v = n[i] < v ? n[i] : v;
+            b = n[i] > b ? n[i] : b;
             m += n[i];
         }
-        
+
         m /= c;
 
-        System.out.printf("Kleinster Wert: %.2f\nGrößter Wert: %.2f\nArithmetischer Mittelwer: %.2f\n", min, max, m);
+        System.out.printf("Kleinster Wert: %.2f\nGrößter Wert: %.2f\nArithmetischer Mittelwer: %.2f\n", v, b, m);
 
         if(extended) // A4
         {
-            for (int i = 0; i < c; i++) u += exp(n[i] - m,2);
+            for (int k = 0; k < c; k++) u += exp(n[k] - m,2);
             System.out.printf("Standardabweichung: %.2f\n", Math.sqrt(u/n.length));
         }
     }
