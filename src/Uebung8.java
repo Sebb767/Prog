@@ -14,7 +14,7 @@ public class Uebung8 {
 
         for(int i = 0; i < 6; i++)
         {
-            z[i] = (int)(Math.random() * 48) +1;
+            z[i] = (int)(Math.random() * 49) +1;
 
             for(int k = 0; k < i; k++) if(z[i] == z[k]) i--;
         }
