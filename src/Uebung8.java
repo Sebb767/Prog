@@ -38,21 +38,13 @@ public class Uebung8 {
     public static String spielen(String w)
     {
         String r = "";
-        for(char c:w.toCharArray()) switch(c) {
+        for(char c:w.toCharArray()) switch(Character.toLowerCase(c)) {
             case 'a':
-                r += "aba";
-                break;
             case 'i':
-                r += "ibi";
-                break;
             case 'e':
-                r += "ebe";
-                break;
             case 'o':
-                r += "obo";
-                break;
             case 'u':
-                r += "ubu";
+                r += c+"b"+Character.toLowerCase(c);
                 break;
             default:
                 r += c;
