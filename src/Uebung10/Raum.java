@@ -7,7 +7,8 @@ public class Raum {
     final int studenten;
     final String name;
 
-    private boolean belegt = false;
+    //private boolean belegt = false; // obsolet durch A3
+    private Vorlesung v;
 
     public Raum(String name, int studenten) {
         this.studenten = studenten;
@@ -19,10 +20,14 @@ public class Raum {
     }
 
     public boolean isBelegt() {
-        return belegt;
+        return v == null;
     }
 
-    public void setBelegt(boolean belegt) {
-        this.belegt = belegt;
+    public Vorlesung belegung() {
+        return v;
+    }
+
+    public void setBelegt(Vorlesung v) {
+        this.v = v;
     }
 }
