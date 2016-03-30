@@ -20,23 +20,22 @@ public class Point {
 	// Auslesen der x-Koordinate
 	double getX()
 	{
-		// der folgende Rueckgabewert ist fehlerhaft
-		return 0; 
+		return x; // A2
 	}
 	
 	// Auslesen der y-Koordinate
 	double getY()
 	{
-		// der folgende Rueckgabewert ist fehlerhaft
-		return 0; 
+		return y; // A2
 	}
 	
 	// Abstand zu einem anderen Punkt
 	double distance(Point other)
 	{
-		// hier fehlt die Implementierung
-		// der Rueckgabewert ist natuerlich fehlerhaft
-		return 0;
+		return Math.sqrt(
+					Math.pow(this.x-other.x, 2) +
+					Math.pow(this.y-other.y, 2)
+		);
 	}
 	
 	// Erzeugung eines neuen Punktes, der zum Ausgangspunkt verschoben ist
@@ -44,7 +43,7 @@ public class Point {
 	{
 		//hier fehlt die Implementierung
 		// der Rueckgabewert ist ebenfalls fehlerhaft
-		return new Point(0.0, 0.0);
+		return new Point(this.x+deltaX, this.y+deltaY);
 	}
 
 	
@@ -76,10 +75,10 @@ public class Point {
 		double d = p1.distance(p2);
 		
 		if (Math.abs(d- Math.sqrt(5)) > 0.1)
-			System.out.println ("Abstandsberechnung fehlerhaft.");
+			System.out.println ("Abstandsberechnung fehlerhaft (1).");
 
 		if (Math.abs(p1.distance(p2) - p2.distance(p1)) > 0.1)
-			System.out.println ("Abstandsberechnung fehlerhaft.");		
+			System.out.println ("Abstandsberechnung fehlerhaft (2).");
 
 		System.out.println("Testende");
 		
