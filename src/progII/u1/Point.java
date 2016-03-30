@@ -5,11 +5,16 @@ package exercise01;
 // Koordinatensystem repraesentieren.
 
 public class Point {
+
+	// A1
+	private double x,y;
 	
 	// Konstruktor mit Uebergabe der x und y - Koordinate
 	Point(double x, double y)
 	{
-		// hier fehlt die Implementierung des Konstruktors
+		// A1
+		this.x = x;
+		this.y = y;
 	}
 	
 	// Auslesen der x-Koordinate
