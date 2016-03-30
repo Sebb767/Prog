@@ -1,0 +1,55 @@
+/**
+ * Created by sebb on 12/2/15.
+ */
+class ggm
+{
+    public static String[] wordlist =
+            {
+                    "kraeftezehrenden", "verurteilende", "treuhaenderischen", "wehrfaehigsten",
+                    "Emitterfolger", "kreuzigt", "tausendjaehriger", "Ehefrieden", "coaten",
+                    "Sondierungsgespraeche", "molligsten", "unfuegsamster", "Schiffslinien",
+                    "Vorderradbremsen", "Geruechten", "Siegesmarsch", "gutgemeinten", "verekelnder",
+                    "Analphabet", "Softwareansatz", "Baumstruenke", "segel", "imitierendem",
+                    "fleischlosen", "Firmenchef", "zusammenschlagend", "Heizkissen", "Ausbaueinheit",
+                    "veraenderndes", "Maennerblicke", "schmeissend", "lichtet", "Sowjets", "Paechter",
+                    "hervorgegangene", "Sporadisch", "Rotschrift", "Touristikunternehmen", "Taxis",
+                    "Tageskurs", "zeigenden", "Hauptbahnhofs", "dezimalen", "zusammengearbeitet",
+                    "Warenbestaende", "Huegelkuppe", "steinigt", "knetest", "Sturzacker",
+                    "Gespraechsaufzeichnungen", "einwandfreien", "einwandfreien", "knoepften",
+                    "schwindsuechtigen", "Lupe", "ersetzbarste", "vegetarisches", "Schnickschnacklose",
+                    "gekennzeichnete", "Anblick", "Photografen", "kleinstmoegliches", "besoldungsmaessige",
+                    "sorgenvoller", "Brueckenkoepfe", "zusammengestrichenem", "leidenschaftlich",
+                    "tiefgeladene", "Querweg", "Reservebildschirme", "genaehtem", "aufgewickelt",
+                    "angebotenen", "beschumpfene", "Hoefen", "marco", "verlebst", "Heizkesseln",
+                    "Finanzielle", "hinterherrennt", "Profil", "Profil", "Jahresvorrat", "geizen",
+                    "Stafettenlaeufe", "abgespiegeltem", "Entwicklungslabors", "verfuetterst", "aussichtsvollere",
+                    "gingst", "tauchten", "katapultierendes", "keuscheren", "verbruehtet", "abgegrenztem",
+                    "Gehaeusewand", "wahrnehmbareres", "Wartens", "Gesamtschulzeit", "Sortiment", "abtrennen",
+                    "abtrennen", "Spielgefaehrten", "bohrende", "Landspitze", "stumpfsinnigeres", "Autohaendlern",
+                    "listigen", "unzensiert", "spotteten", "Sprengrings", "Fronarbeit", "plangemaess", "tariflich",
+                    "ausmachen", "ausmachen", "zwecklosester", "Indianern", "Mutterglueck", "Hasenscharten",
+                    "abzustehen", "zugespielten", "vorgestreckt", "Erwerbsquelle", "Machbarkeit", "Machbarkeit",
+                    "Kohlenbezuege", "regalmaessig", "unfahrbare", "vorstaedtischen", "zartester",
+                    "uebergestreiften", "Muenchner", "schmackhafterer", "Lilliputs", "Kriegstagebuch",
+                    "Bauchspeicheldruese", "Bauchspeicheldruese", "abgezeichneter", "Endprodukt", "verhallen",
+                    "Kanonendonner", "reklamierst", "vorgewiesen", "objektorientierten", "Ostergeschaeft",
+                    "krassere", "zitterigsten", "Warmwassers", "unwiederbringlichem", "Gegenmitteln",
+                    "verkruemmtes", "Flickereien", "Vernuenftige", "zuhoert", "naerrischerem", "Netzwerkkanal",
+                    "gesengt", "Leibarzt", "anbratendes", "andrehende", "abrundete", "Schoepfern", "Wasserfluten",
+                    "Hauptbadestrand", "betoertest", "Kurzdokumentation", "Praeferenzzone", "Nullen", "Nullen",
+                    "erfindungsreiches", "Spuellappens", "Fondsverwaltung", "vermodertem", "zutrinkende", "taugst",
+                    "Beantwortung", "schaetzenswertesten", "angesehenes", "Jammerbildern", "Davis-Pokal",
+                    "uebertagenen", "Stauwerken", "Militaerregimes", "aufscheuchender", "wackerster",
+                    "lernbegierigem", "entgegengebracht", "Einbussen", "hingegebenes", "vertuschten",
+                    "entmutigende", "frisches", "unwahrscheinlichsten", "entgegengegangenen", "Trainer", "Wagen",
+                    "Wagen", "Wagen", "Portraet", "Sektoruebergang", "folgsameren", "Herzklappe", "MasS",
+                    "Saugpapier", "gekaempft", "Schwarzaergern", "kulturpolitischem", "vorgeschriebene",
+                    "vorgeschriebene", "foppenden", "KSZE-Sicherheitskonferenz", "schabest", "waschechte",
+                    "einstossender", "schamhaftes", "Metallhalter", "tausendmal", "jordanisch", "einbeziehen",
+                    "einbeziehen", "Kernexplosion", "Massenkundgebung", "unrentabelster", "sprechender",
+                    "Kooperationsbemuehungen", "konservativsten", "Signalspannung", "Nylons", "wasserarmem",
+                    "markierten", "markierten", "ueberteuerten", "Nutzflaechen", "hierhergehoerenden",
+                    "Krawallhorden", "Schallbuendels", "kapitalintensivem", "mittelgross", "spazierengehenden",
+                    "Buergersteige", "transportierte", "Schlaefe", "tautologisch", "Nehru"
+            };
+}
