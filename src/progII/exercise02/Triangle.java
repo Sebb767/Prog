@@ -8,6 +8,7 @@ public class Triangle implements Polygon
     private Point[] vertices;
 
     public Triangle(Point p1, Point p2, Point p3) {
+
         vertices = new Point[] { p1, p2, p3 };
     }
 
@@ -45,7 +46,7 @@ public class Triangle implements Polygon
     private void printPoints()
     {
         for (int i = 0; i < vertices.length; i++)
-        {
+        { 
             System.out.printf("Point%d: (%.2f;%.2f)\n", i, vertices[i].getX(), vertices[i].getY());
         }
     }
