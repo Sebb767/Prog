@@ -8,10 +8,13 @@ public class Circle implements Shape
   {
     this.r = r;
   }
-  
+
   @Override
   public double calculateArea()
   {
     return r * r * Math.PI;
   }
+
+  @Override
+  public double calculatePerimeter() { return 2*r*Math.PI; }
 }

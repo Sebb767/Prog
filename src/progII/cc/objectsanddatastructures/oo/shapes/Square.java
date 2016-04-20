@@ -14,4 +14,7 @@ public class Square implements Shape
   {
     return a * a;
   }
+
+  @Override
+  public double calculatePerimeter() { return 4 * a; }
 }
