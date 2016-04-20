@@ -10,7 +10,27 @@ public class EnhancedChangeCalculator extends SimpleChangeCalculator
 {
 	
 	// Hier fehlt Ihre Implementierung
-	
+
+
+	@Override
+	public int[] getChange(int euros, int cent) {
+		while (cent > 100) {
+			euros ++;
+			cent -= 100;
+		}
+
+		return new int[] {
+				euros / 2,
+				euros % 2,
+				cent / 50, // 50ct
+				(cent % 50) / 20, // 20ct
+				((cent % 50) % 20) / 10, // 10ct
+				(cent % 10) / 5, // 5ct
+				(cent % 5) / 2, // 2ct
+				cent % 2 // 1ct
+		};
+	}
+
 	// Die nachfolgende main-Methode kann genutzt werden, um das
 	// Ergebnis zu ueberpruefen.
 	public static void main(String[] args)
@@ -19,7 +39,7 @@ public class EnhancedChangeCalculator extends SimpleChangeCalculator
 		int j = 0;
 		EnhancedChangeCalculator calc = new EnhancedChangeCalculator();
 		
-		System.out.println("\nZuerst ein simpler Fall: Es sollen 1 Euro und 70 Cent Wechselgeld zurückgegeben werden:");
+		System.out.println("\nZuerst ein simpler Fall: Es sollen 1 Euro und 70 Cent Wechselgeld zurÃ¼ckgegeben werden:");
 		int[] result = calc.getChange(1,70);
 		
 		System.out.println("\nDer Automat gibt folgende Muenzen zurueck:");
@@ -29,9 +49,9 @@ public class EnhancedChangeCalculator extends SimpleChangeCalculator
 			System.out.println(result[i] + " x " + Coin.availableCoins[i].getName());
 			j += result[i];
 		}//endfor
-		System.out.println("Anzahl der Münzen: " + j);
+		System.out.println("Anzahl der MÃ¼nzen: " + j);
 		
-		System.out.println("\nJetzt ein bißchen schwieriger: Es sollen 3 Euro und 88 Cent Wechselgeld zurückgegeben werden:");
+		System.out.println("\nJetzt ein biÃŸchen schwieriger: Es sollen 3 Euro und 88 Cent Wechselgeld zurÃ¼ckgegeben werden:");
 		result = calc.getChange(3,88);
 		
 		System.out.println("\nDer Automat gibt folgende Muenzen zurueck:");
@@ -41,7 +61,7 @@ public class EnhancedChangeCalculator extends SimpleChangeCalculator
 			System.out.println(result[i] + " x " + Coin.availableCoins[i].getName());
 			j += result[i];
 		}//endfor
-		System.out.println("Anzahl der Münzen: " + j);
+		System.out.println("Anzahl der MÃ¼nzen: " + j);
 	}//endmethod main
 	
 }//endclass EnhancedChangeCalculator
