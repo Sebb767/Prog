@@ -16,7 +16,7 @@ public class NaviCon implements NaviConInterface
 
     public NaviCon()
     {
-        
+
     }
 
     @Override
