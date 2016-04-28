@@ -29,8 +29,14 @@ public class CaseInsensitiveString
 	
 // ***************************************************************************
 // Hier fehlt die Implementierung einer passenden equals-Methode
-	
-	
+
+	@Override
+	public boolean equals(Object obj) {
+		if( obj == null || ! (obj instanceof CaseInsensitiveString) ) return false;
+
+		return this.s.toLowerCase().equals(((CaseInsensitiveString)obj).s.toLowerCase());
+	}
+
 
 // ***************************************************************************
 
