@@ -34,7 +34,11 @@ public class CaseInsensitiveString
 	public boolean equals(Object obj) {
 		if( obj == null || ! (obj instanceof CaseInsensitiveString) ) return false;
 
-		return this.s.toLowerCase().equals(((CaseInsensitiveString)obj).s.toLowerCase());
+		return this.s.toLowerCase().equals(
+				((CaseInsensitiveString)obj) // obj als CaseI... downcasten
+						.s // auf obj's string zugreifen
+							.toLowerCase() // und diesen als lower case
+		);
 	}
 
 
