@@ -23,21 +23,31 @@ public class Server {
             try
             {
                 ServerSocket ss = new ServerSocket(port);
+                System.out.printf("info: Listening on port %d.\n", port);
                 while (true)
                 {
                     Socket cl = ss.accept();
+                    System.out.printf("info: client connected.\n");
                     BufferedReader br = new BufferedReader(new InputStreamReader(cl.getInputStream()));
 
-                    while(br.ready())
+                    while(cl.isConnected())
                     {
-                        System.out.printf("recv: %s", br.readLine());
+                        System.out.printf("recv: %s\n", br.readLine());
                     }
+
+                    System.out.printf("info: client disconnected.\n");
                 }
             }
             catch (IOException ex)
             {
-                System.out.printf("fail: Received IOExeception with message '%s'! Restoring ...", ex.getMessage());
+                System.out.printf("fail: Received IOExeception with message '%s'! Restoring ...\n", ex.getMessage());
             }
         }
+    }
+
+    public static void main(String[] args)
+    {
+        Server srv = new Server(2030);
+        srv.listen();
     }
 }
