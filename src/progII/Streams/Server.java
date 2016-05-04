@@ -28,9 +28,10 @@ public class Server {
                 {
                     Socket cl = ss.accept();
                     System.out.printf("info: client connected.\n");
-                    BufferedReader br = new BufferedReader(new InputStreamReader(cl.getInputStream()));
+                    InputStreamReader is = new InputStreamReader(cl.getInputStream());
+                    BufferedReader br = new BufferedReader(is);
 
-                    while(cl.isConnected())
+                    while(cl.isConnected() && is.ready())
                     {
                         System.out.printf("recv: %s\n", br.readLine());
                     }
