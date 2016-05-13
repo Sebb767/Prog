@@ -12,4 +12,9 @@ public class Vendor extends Partner implements GoodsSource {
     public boolean deliver(int count) {
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Lieferant: "+super.toString();
+    }
 }
