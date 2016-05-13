@@ -23,6 +23,6 @@ public class Stock implements GoodsSink, GoodsSource {
 
     @Override
     public String toString() {
-        return "Im Lager: " + stock;
+        return "Im Lager: " + stock + "\n";
     }
 }
