@@ -5,7 +5,7 @@ package exercise07;
  */
 public class ArrayQueue<T> implements Queue<T> {
     private Object[] data;
-    private int iptr = 0, optr = 0, max, dist = 0;
+    private int optr = 0, max, dist = 0;
 
     public ArrayQueue(int max) {
         data = new Object[max];
@@ -17,8 +17,7 @@ public class ArrayQueue<T> implements Queue<T> {
         if(dist >= max)
             throw new IllegalAccessException();
 
-        data[iptr++] = element;
-        iptr %= max;
+        data[(optr+dist)%max] = element;
         dist++;
     }
 
