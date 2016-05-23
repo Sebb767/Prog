@@ -1,48 +1,51 @@
 package exercise07;
 
-import java.lang.reflect.Array;
-
 /**
  * Created by sebb on 5/23/16.
  */
 public class ArrayQueue<T> implements Queue<T> {
     private Object[] data;
-    private int ptr = 0;
+    private int iptr = 0, optr = 0, max, dist = 0;
 
     public ArrayQueue(int max) {
         data = new Object[max];
+        this.max = max;
     }
 
     @Override
     public void enqueue(T element) throws IllegalAccessException {
-        if(ptr == data.length)
+        if(dist >= max)
             throw new IllegalAccessException();
 
-        data[ptr++] = element;
+        data[iptr++] = element;
+        iptr %= max;
+        dist++;
     }
 
     @Override
     public T dequeue() {
-        if(ptr <= 0)
+        if(empty())
             return null;
 
         @SuppressWarnings("unchecked")
-        final T e = (T)data[--ptr];
+        final T e = (T)data[optr++];
+        optr %= max;
+        dist--;
         return e;
     }
 
     @Override
     public T front() {
-        if(ptr <= 0)
+        if(empty())
             return null;
 
         @SuppressWarnings("unchecked")
-        final T e = (T)data[ptr-1];
+        final T e = (T)data[optr];
         return e;
     }
 
     @Override
     public boolean empty() {
-        return ptr == 0;
+        return dist == 0;
     }
 }
