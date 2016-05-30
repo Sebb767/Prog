@@ -13,7 +13,26 @@ public class FileDecryptor {
 	// Diese Methode muss nach den Vorgaben implementiert werden.
 	public static void decryptFile(String filename)
 	{
-		// Hier fehlt die Implementierung
+		for (int i = 0; i < 255; i++) {
+			try {
+				FileInputStream fis = new FileInputStream(filename);
+				DecryptInputStream dis = new DecryptInputStream(fis, i);
+
+				int read = 0;
+				do {
+					read = dis.read();
+					System.out.printf("%s", (char)dis.read());
+				}
+				while(read != -1);
+
+				System.out.println();
+			}
+			catch (Exception ex)
+			{
+				ex.printStackTrace();
+			}
+		}
+
 	}
 	
 	// Diese main-Methode zeigt die Verwednung der zu 
@@ -21,7 +40,7 @@ public class FileDecryptor {
 	// erkennen, ob Ihre Implementierung funktioniert.
 	public static void main(String[] args)
 	{
-		decryptFile("src/exercis08/data.crypt");
+		decryptFile("/home/proj/Projekte/fh/Prog/src/progII/exercise08/data.crypt");
 	}
 	
 }
