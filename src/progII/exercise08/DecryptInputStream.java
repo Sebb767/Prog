@@ -11,6 +11,8 @@ public class DecryptInputStream extends InputStream {
     private /* super secret */ int key;
 
     public DecryptInputStream(InputStream is, int key) {
+        if(key < 0 || key > 255) throw new IllegalArgumentException();
+
         this.is = is;
         this.key = key;
     }

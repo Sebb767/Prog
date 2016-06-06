@@ -11,6 +11,8 @@ public class EncryptOutputStream extends OutputStream {
     private /* super secret */ int key;
 
     public EncryptOutputStream(OutputStream os, int key) {
+        if(key < 0 || key > 255) throw new IllegalArgumentException();
+
         this.os = os;
         this.key = key;
     }

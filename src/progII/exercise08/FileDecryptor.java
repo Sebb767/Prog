@@ -13,17 +13,18 @@ public class FileDecryptor {
 	// Diese Methode muss nach den Vorgaben implementiert werden.
 	public static void decryptFile(String filename)
 	{
-		for (int i = 0; i < 255; i++) {
+		for (int i = 100; i < 101; i++) {
 			try {
 				FileInputStream fis = new FileInputStream(filename);
 				DecryptInputStream dis = new DecryptInputStream(fis, i);
 
-				int read = 0;
-				do {
+				int read = dis.read();
+
+				while(read != -1)
+				{
+                    System.out.print((char)(read));
 					read = dis.read();
-					System.out.printf("%s", (char)dis.read());
 				}
-				while(read != -1);
 
 				System.out.println();
 			}
