@@ -17,7 +17,7 @@ public class EchoFinder implements EchoFinderInterface {
             return m;
 
         }
-        catch (IOException e)
+        catch (Exception e)
         {
             return null;
         }
@@ -25,7 +25,7 @@ public class EchoFinder implements EchoFinderInterface {
 
     @Override
     public BufferedReader getSystemInAsBufferedReader() {
-        return new BufferedReader(new InputStreamReader(System.in));
+        return null; //new BufferedReader(new InputStreamReader(System.in));
     }
 
     public static void main(String[] args) {
