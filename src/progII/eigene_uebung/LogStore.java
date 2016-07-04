@@ -24,16 +24,18 @@ public class LogStore {
     }
 
     public LogEntry[] logsBetween(Date from, Date to) {
-        return (LogEntry[]) c
-                .parallelStream()
-                .map(x -> from.getTime() >= x.getTimestamp() && to.getTime() <= x.getTimestamp())
-                .toArray();
+        return map(x -> from.getTime() >= x.getTimestamp() && to.getTime() <= x.getTimestamp());
     }
 
     public LogEntry[] logsForSysten(String systemName) {
+        return map(x -> x.getName().equals(systemName));
+    }
+
+    protected LogEntry[] map(java.util.function.Predicate<? super LogEntry> mapper)
+    {
         return (LogEntry[]) c
                 .parallelStream()
-                .map(x -> x.getName().compareTo(systemName))
+                .filter(mapper)
                 .toArray();
     }
 
