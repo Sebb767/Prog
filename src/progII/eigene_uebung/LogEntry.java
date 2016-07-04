@@ -24,4 +24,20 @@ public class LogEntry {
     public String toString() {
         return timestamp + "-" + name + "-" + failureDescription;
     }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getFailureDescription() {
+        return failureDescription;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
