@@ -9,7 +9,7 @@ import java.util.Date;
 
 
 public class LogStore {
-    Collection<LogEntry> c;
+    protected Collection<LogEntry> c;
 
     public LogStore() {
         c = new ArrayList<>();
@@ -24,15 +24,17 @@ public class LogStore {
     }
 
     public LogEntry[] logsBetween(Date from, Date to) {
-
         return (LogEntry[]) c
-                .stream()
+                .parallelStream()
                 .map(x -> from.getTime() >= x.getTimestamp() && to.getTime() <= x.getTimestamp())
                 .toArray();
     }
 
     public LogEntry[] logsForSysten(String systemName) {
-        return null;
+        return (LogEntry[]) c
+                .parallelStream()
+                .map(x -> x.getName().compareTo(systemName))
+                .toArray();
     }
 
 }
