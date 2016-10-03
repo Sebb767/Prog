@@ -1,10 +1,10 @@
 # Prog Lösungen
-Lösungen zu den Übungen von ProgI [BIN] und ProgII [BIN] an der FHWS. Die Übungen stehen aus Urheberrechtsgründen nicht online. 
+Lösungen zu den Übungen von ProgI [BIN] und ProgII [BIN] an der FHWS. Die Übungen stehen aus Urheberrechtsgründen nicht online. Manche Lösungen sind auch abgewandelt. Daher sollten diese Lösungen eher als Kontrolle verwendet werden oder von Leuten, die sich auch "am Anfang" "ein wenig" langweilen :p 
 
 ## Prog II
 
-Bis jetzt komplett geordnete Standard-Lösungen zu den Übungen. 
+Größteilteils geordnete Standard-Lösungen zu den Übungen. 
 
 ## ProgI
 
-Alte Lösungen für ProgI. Die neusten Lösungen fehlen. Manche sind auch abgewandelt & sollten eher als Kontrolle verwendet werden oder von Leuten, die sich auch "am Anfang" "ein wenig" langweilen :p
+Etwas weniger geordnete Lösungen für ProgI. Die höchsten Übungen fehlen, da ich da bereits mit den Punkten durch war. 
