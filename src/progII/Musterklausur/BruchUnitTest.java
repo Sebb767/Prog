@@ -1,6 +1,9 @@
 package Musterklausur;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -8,6 +11,8 @@ import static org.junit.Assert.*;
  */
 
 public class BruchUnitTest {
+    @Rule
+    public ExpectedException thrown= ExpectedException.none();
 
     @Test
     public void testSingleConstructor()
@@ -30,5 +35,12 @@ public class BruchUnitTest {
     {
         Bruch b = new Bruch(3, 2);
         assertEquals("toString returned a wrong value!", "3/2", b.toString());
+    }
+
+    @Test
+    public void testToZero()
+    {
+        thrown.expect(ArithmeticException.class);
+        Bruch b = new Bruch(32, 0);
     }
 }

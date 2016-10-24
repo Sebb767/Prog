@@ -31,5 +31,6 @@ public class EchoFinder implements EchoFinderInterface {
     public static void main(String[] args) {
         EchoFinder e = new EchoFinder();
         System.out.println(e.getPair(e.getSystemInAsBufferedReader()));
+
     }
 }

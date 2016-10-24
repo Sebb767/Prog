@@ -7,7 +7,7 @@ public class Bruch implements Comparable<Bruch> {
     int zaehler,nenner;
 
     // a)
-    public Bruch(int zaehler, int nenner) { this.zaehler = zaehler; this.nenner = nenner; }
+    public Bruch(int zaehler, int nenner) { if(nenner == 0) throw new ArithmeticException(); this.zaehler = zaehler; this.nenner = nenner; }
     public Bruch(int wert) { this(wert, 1); }
     public Bruch() { this(0); }
 
