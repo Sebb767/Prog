@@ -24,8 +24,13 @@ public class Buchhaltung {
 
     public double getTotal()
     {
-        return inhalt.stream().map(p -> p.getTotal()).reduce((double)0, Double::sum);
+        //return inhalt.stream().map(p -> p.getTotal()).reduce((double)0, Double::sum);
 
+        double sum = 0;
 
+        for (Rechnung r : inhalt)
+            sum += r.getTotal();
+
+        return sum;
     }
 }
