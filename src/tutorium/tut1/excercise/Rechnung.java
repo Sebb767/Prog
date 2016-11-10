@@ -1,4 +1,4 @@
-package tut1.Aufgabe;
+package tut1.excercise;
 
 /**
  * Created by proj on 11/3/16.
@@ -68,7 +68,7 @@ public class Rechnung {
             for(Pizza p : r.inhalt)
                 System.out.printf(
                         "%s - %.2f\n",
-                        p.getClass().getName().replace("tut1.Aufgabe.Pizza", "Pizza "),
+                        p.getClass().getName().replace("tut1.excercise.Pizza", "Pizza "),
                         p.getPreis()
                 );
 

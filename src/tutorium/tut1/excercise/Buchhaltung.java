@@ -1,4 +1,4 @@
-package tut1.Aufgabe;
+package tut1.excercise;
 
 import java.util.ArrayList;
 
