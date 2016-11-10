@@ -1,4 +1,4 @@
-package tut1;
+package tut1.Aufgabe;
 
 /**
  * Created by proj on 11/3/16.

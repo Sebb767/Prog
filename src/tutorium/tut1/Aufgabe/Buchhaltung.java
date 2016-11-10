@@ -1,7 +1,6 @@
-package tut1;
+package tut1.Aufgabe;
 
 import java.util.ArrayList;
-import java.util.DoubleSummaryStatistics;
 
 /**
  * Created by proj on 11/3/16.
@@ -18,7 +17,8 @@ public class Buchhaltung {
         inhalt.add(r);
     }
 
-    public ArrayList<Rechnung> getInhalt() {
+    public ArrayList<Rechnung> getInhalt()
+    {
         return inhalt;
     }
 

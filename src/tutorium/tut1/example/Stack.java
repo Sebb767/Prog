@@ -1,4 +1,4 @@
-package tut1;
+package tut1.example;
 
 import java.util.ArrayList;
 import java.util.Collection;

@@ -1,6 +1,4 @@
-package tut1;
-
-import java.util.ArrayList;
+package tut1.Aufgabe;
 
 /**
  * Created by proj on 11/3/16.
@@ -70,7 +68,7 @@ public class Rechnung {
             for(Pizza p : r.inhalt)
                 System.out.printf(
                         "%s - %.2f\n",
-                        p.getClass().getName().replace("tut1.Pizza", "Pizza "),
+                        p.getClass().getName().replace("tut1.Aufgabe.Pizza", "Pizza "),
                         p.getPreis()
                 );
 
