@@ -2,6 +2,7 @@ package tut2.example;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -10,6 +11,13 @@ import java.util.List;
 public class Student implements Comparable<Student> {
     protected int matNr;
     protected int alter;
+
+
+    /*
+
+    Sortierung via Interface Comparable<T>
+
+     */
 
     public static ArrayList<Student> SortByNrViaInterface(ArrayList<Student> in)
     {
@@ -26,6 +34,80 @@ public class Student implements Comparable<Student> {
             return 1;
 
         return matNr - other.matNr;
+    }
+
+    /*
+
+    Sortierung via innerer Klasse
+
+     */
+
+     private class InnerSortingClass implements Comparator<Student> {
+        @Override
+        public int compare(Student o1, Student o2) {
+            if(o1 == null)
+                return o2 == null ? 0 : -1;
+
+            return o1.getAlter() - o2.getAlter();
+        }
+    }
+
+    public ArrayList<Student> SortByAgeViaInnerClass(ArrayList<Student> in)
+    {
+        InnerSortingClass s = new InnerSortingClass();
+
+        in.sort(s);
+
+        return in;
+    }
+
+    /*
+
+    Sortierung via lokaler Klasse
+
+     */
+
+    public static ArrayList<Student> SortByAgeViaLocalClass(ArrayList<Student> in)
+    {
+        class LocalSortingClass implements Comparator<Student> {
+            @Override
+            public int compare(Student o1, Student o2) {
+                if(o1 == null)
+                    return o2 == null ? 0 : -1;
+
+                return o1.getAlter() - o2.getAlter();
+            }
+        }
+
+        LocalSortingClass s = new LocalSortingClass();
+
+        in.sort(s);
+
+        return in;
+    }
+
+    /*
+
+    Sortierung via anonymer Klasse
+
+     */
+
+    public static ArrayList<Student> SortByAgeViaAnonymousClass(ArrayList<Student> in)
+    {
+        // Comparator ist ein Interface und kann eigentlich nicht erstellt werden!
+        Comparator<Student> s = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                if(o1 == null)
+                    return o2 == null ? 0 : -1;
+
+                return o1.getAlter() - o2.getAlter();
+            }
+        };
+
+        in.sort(s);
+
+        return in;
     }
 
 
