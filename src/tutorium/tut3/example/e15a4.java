@@ -45,7 +45,7 @@ public class e15a4 {
             long duration_bis = check_duration_until_end(bis);
 
             System.out.printf(
-                    "Der nicht-gepufferte IS hat %d ns gebraucht, der BIS hat %d ns gebraucht",
+                    "Der nicht-gepufferte IS hat %d ms gebraucht, der BIS hat %d ms gebraucht",
                     duration_is,
                     duration_bis
             );
