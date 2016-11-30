@@ -21,7 +21,7 @@ public class QueueUnitTest {
         q.enqueue("test");
         q.enqueue("test2");
 
-        assertEquals(q.dequeue(), "test");
+        assertTrue(q.dequeue().equals("test"));
         assertEquals(q.dequeue(), "test2");
     }
 
