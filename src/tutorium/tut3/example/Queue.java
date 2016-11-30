@@ -13,12 +13,12 @@ public class Queue<T> {
         lst = new ArrayList<>();
     }
 
-    void enqueue(T in)
+    public void enqueue(T in)
     {
         lst.add(in);
     }
 
-    T dequeue() throws QueueEmptyException
+    public T dequeue() throws QueueEmptyException
     {
         // do something
         if(empty())
