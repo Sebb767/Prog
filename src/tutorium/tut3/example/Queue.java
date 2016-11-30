@@ -27,7 +27,7 @@ public class Queue<T> {
         return lst.remove(0);
     }
 
-    boolean empty()
+    public boolean empty()
     {
         return lst.isEmpty();
     }
