@@ -30,5 +30,33 @@ public class QueueUnitTest {
     {
         assertTrue(q.empty());
     }
+
+    @Test
+    public void testQueueEmptyAfterDequeueing() throws QueueEmptyException
+    {
+        q.enqueue("test");
+
+        assertFalse(q.empty());
+
+        q.dequeue();
+
+        assertTrue(q.empty());;
+    }
+
+    @Test
+    public void TestForExceptionInRatherCreativeWays()
+    {
+        try
+        {
+            assertTrue(q.empty());
+            q.dequeue();
+            assertTrue(false);
+        }
+        catch (QueueEmptyException ex)
+        {
+            // everything ok
+            assertTrue(true);
+        }
+    }
 }
 
