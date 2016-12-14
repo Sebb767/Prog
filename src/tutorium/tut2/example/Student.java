@@ -140,21 +140,27 @@ public class Student implements Comparable<Student> {
     Sortierung via Lambda (nicht Klausurrelevant)
 
      */
-    /*
-
-    Sortierung via anonymer Klasse
-
-     */
     public static ArrayList<Student> SortByAgeViaLambda(ArrayList<Student> in)
     {
-        Comparator<Student> s = (o1, o2) -> {
+
+        in.sort((o1, o2) -> {
             if(o1 == null)
                 return o2 == null ? 0 : -1;
 
             return o1.getAlter() - o2.getAlter();
-        };
+        });
 
-        in.sort(s);
+        return in;
+    }
+
+    /*
+
+    Java 8 Kurzschreibweise: Method Reference (nicht Klausurrelevant)
+
+     */
+    public static ArrayList<Student> SortByAgeViaMethodReference(ArrayList<Student> in)
+    {
+        Collections.sort(in, Comparator.comparing(Student::getAlter));
 
         return in;
     }
