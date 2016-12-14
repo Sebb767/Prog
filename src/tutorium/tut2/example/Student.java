@@ -123,7 +123,7 @@ public class Student implements Comparable<Student> {
             ls.add(new Student((int)(Math.random() * 2000000 + 5000000), (int)(Math.random() * 20 + 18)));
 
         // irgendwie sortieren
-
+        ls.get(0).SortByAgeViaInnerClass(ls);
 
         // und ausgeben
         for(Student s : ls)
