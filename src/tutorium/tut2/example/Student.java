@@ -38,6 +38,31 @@ public class Student implements Comparable<Student> {
 
     /*
 
+    Sortierung via statischer innerer Klasse
+
+     */
+
+    private static class StaticInnerSortingClass implements Comparator<Student> {
+        @Override
+        public int compare(Student o1, Student o2) {
+            if(o1 == null)
+                return o2 == null ? 0 : -1;
+
+            return o1.getAlter() - o2.getAlter();
+        }
+    }
+
+    public static ArrayList<Student> SortByAgeViaStaticInnerClass(ArrayList<Student> in)
+    {
+        StaticInnerSortingClass s = new StaticInnerSortingClass();
+
+        in.sort(s);
+
+        return in;
+    }
+
+    /*
+
     Sortierung via innerer Klasse
 
      */
@@ -52,6 +77,7 @@ public class Student implements Comparable<Student> {
         }
     }
 
+    // Note that this Method may not be static!
     public ArrayList<Student> SortByAgeViaInnerClass(ArrayList<Student> in)
     {
         InnerSortingClass s = new InnerSortingClass();
@@ -94,7 +120,6 @@ public class Student implements Comparable<Student> {
 
     public static ArrayList<Student> SortByAgeViaAnonymousClass(ArrayList<Student> in)
     {
-        // Comparator ist ein Interface und kann eigentlich nicht erstellt werden!
         Comparator<Student> s = new Comparator<Student>() {
             @Override
             public int compare(Student o1, Student o2) {
@@ -103,6 +128,30 @@ public class Student implements Comparable<Student> {
 
                 return o1.getAlter() - o2.getAlter();
             }
+        };
+
+        in.sort(s);
+
+        return in;
+    }
+
+    /*
+
+    Sortierung via Lambda (nicht Klausurrelevant)
+
+     */
+    /*
+
+    Sortierung via anonymer Klasse
+
+     */
+    public static ArrayList<Student> SortByAgeViaLambda(ArrayList<Student> in)
+    {
+        Comparator<Student> s = (o1, o2) -> {
+            if(o1 == null)
+                return o2 == null ? 0 : -1;
+
+            return o1.getAlter() - o2.getAlter();
         };
 
         in.sort(s);
