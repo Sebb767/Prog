@@ -62,6 +62,6 @@ public class TCPServer {
         };
 
         TCPServer tcp = new TCPServer(3302, h, w);
-
+        tcp.listen();
     }
 }

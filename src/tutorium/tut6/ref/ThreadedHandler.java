@@ -5,19 +5,28 @@ import java.net.Socket;
 /**
  * Created by proj on 12/19/16.
  */
-public class ThreadedHandler extends Thread implements Handler {
-    protected Socket s;
-    protected WorkerFactory wf;
+public class ThreadedHandler implements Handler {
+
+    private class ThreadWorker extends Thread {
+        Socket s;
+        WorkerFactory w;
+
+        public ThreadWorker(Socket s, WorkerFactory w) {
+            this.s = s;
+            this.w = w;
+        }
+
+        @Override
+        public void run() {
+            w.createWorker().handle(s);
+        }
+    }
 
     @Override
     public void handleConnection(Socket s, WorkerFactory w) {
-        this.s = s;
-        this.wf = w;
-        this.start();
-    }
+        ThreadWorker tw = new ThreadWorker(s, w);
+        tw.start();
 
-    @Override
-    public void run() {
-        wf.createWorker().handle(s);
     }
 }
+
