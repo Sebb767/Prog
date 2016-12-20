@@ -52,6 +52,10 @@ public class TCPServer {
 
     public static void main(String[] args) {
         Handler h = new ThreadedHandler();
+        //Handler h = new NotThreadedHandler();
+        //Handler h = new PooledWorker();
+
+
         WorkerFactory w = new WorkerFactory() {
             private AtomicInteger counter = new AtomicInteger(1);
 
