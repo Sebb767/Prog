@@ -8,9 +8,20 @@ import java.util.*;
 public class AuftragsVerwaltung implements Iterable<Auftrag> {
     protected HashMap<String, Auftrag> content = new HashMap<>();
 
-    public void add(Auftrag at)
+    public void add(Auftrag at) throws MyDuplicateElementException
     {
+        if(content.containsKey(at.getId()))
+            throw new MyDuplicateElementException();
+
         content.put(at.getId(), at);
+    }
+
+    public Auftrag get(String id) throws MyNoSuchElementException
+    {
+        if(!content.containsKey(id))
+            throw new MyNoSuchElementException();
+
+        return content.get(id);
     }
 
     public static class AvIterator implements Iterator<Auftrag>
