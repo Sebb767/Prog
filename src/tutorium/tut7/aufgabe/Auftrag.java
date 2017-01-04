@@ -1,9 +1,11 @@
 package tut7.aufgabe;
 
+import java.io.Serializable;
+
 /**
  * Created by proj on 1/4/17.
  */
-public class Auftrag implements Stackable {
+public class Auftrag implements Stackable, Serializable {
     protected String id;
     protected int stunden;
 

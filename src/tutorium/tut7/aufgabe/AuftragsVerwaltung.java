@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * Created by proj on 1/4/17.
  */
-public class AuftragsVerwaltung implements Iterable<Auftrag> {
+public class AuftragsVerwaltung implements Iterable<Auftrag>, Serializable {
     protected HashMap<String, Auftrag> content = new HashMap<>();
 
     public void add(Auftrag at) throws MyDuplicateElementException
@@ -105,5 +105,24 @@ public class AuftragsVerwaltung implements Iterable<Auftrag> {
         }
 
         br.close();
+    }
+
+    public void toFile(String pfad) throws IOException
+    {
+        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(pfad));
+
+        oos.writeObject(this);
+
+        oos.close();
+    }
+
+    public static AuftragsVerwaltung fromFile(String pfad) throws IOException, ClassNotFoundException
+    {
+        ObjectInputStream ois = new ObjectInputStream(new FileInputStream(pfad));
+
+        AuftragsVerwaltung av = (AuftragsVerwaltung)ois.readObject();
+
+        ois.close();
+        return av;
     }
 }

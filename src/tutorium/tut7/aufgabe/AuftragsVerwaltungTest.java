@@ -1,6 +1,8 @@
 package tut7.aufgabe;
 import org.junit.Test;
 
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 /**
@@ -68,5 +70,34 @@ public class AuftragsVerwaltungTest {
         assertEquals(st.pop().getId(), "b");
         assertEquals(st.pop().getId(), "a");
         assertEquals(st.pop().getId(), "c");
+    }
+
+    @Test
+    public void testGetFromFile() throws IOException
+    {
+        AuftragsVerwaltung av = new AuftragsVerwaltung();
+        av.vonDateiEinlesen("/tmp/auftraege.txt");
+
+        assertEquals(av.inhaltAlsListe().size(), 1000);
+    }
+
+    @Test
+    public void testFileSerialization() throws IOException, MyDuplicateElementException, ClassNotFoundException {
+        AuftragsVerwaltung av = new AuftragsVerwaltung(), avr;
+        String file = "/tmp/serialization_test.bin";
+
+
+        av.add(new Auftrag("a", 2));
+        av.add(new Auftrag("b", 4)); // should work
+        av.add(new Auftrag("c", 1)); // should work
+
+        av.toFile(file);
+        avr = AuftragsVerwaltung.fromFile(file);
+
+        Stack<Auftrag> st = avr.nachArbeitsstunden(),
+                ref = av.nachArbeitsstunden();
+        assertEquals(st.pop().getId(), ref.pop().getId());
+        assertEquals(st.pop().getId(), ref.pop().getId());
+        assertEquals(st.pop().getId(), ref.pop().getId());
     }
 }
