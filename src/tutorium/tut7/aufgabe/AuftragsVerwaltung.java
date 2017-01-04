@@ -1,5 +1,6 @@
 package tut7.aufgabe;
 
+import java.io.*;
 import java.util.*;
 
 /**
@@ -84,5 +85,25 @@ public class AuftragsVerwaltung implements Iterable<Auftrag> {
         Collections.sort(ts, new IdSort());
 
         return new Stack<>(ts);
+    }
+
+    public void vonDateiEinlesen(String pfad) throws IOException
+    {
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(pfad)));
+
+        String line;
+
+        while((line = br.readLine()) != null)
+        {
+            String[] data = line.split(";");
+            assert (data.length == 2);
+            try {
+                this.add(new Auftrag(data[0], Integer.parseInt(data[1])));
+            } catch (MyDuplicateElementException e) {
+                // :/
+            }
+        }
+
+        br.close();
     }
 }
