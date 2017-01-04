@@ -1,6 +1,7 @@
 package tut7.aufgabe;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -10,6 +11,9 @@ import java.util.NoSuchElementException;
 public class Stack<T extends Stackable> implements Iterable<T> {
 
     protected ArrayList<T> content = new ArrayList<>();
+
+    public Stack() { }
+    public Stack(Collection<T> in) { content = new ArrayList<>(in); }
 
     public void push(T in)
     {
