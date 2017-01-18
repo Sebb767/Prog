@@ -38,7 +38,7 @@ public class AuftragsVerwaltungTest {
 
         try {
             av.get("a");
-            assertTrue(false);Sag doch,
+            assertTrue(false);
         } catch (MyNoSuchElementException e) {
             assertTrue(true);
             // everything is ok
