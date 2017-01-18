@@ -1,4 +1,6 @@
 package tut7.aufgabe;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -9,6 +11,19 @@ import static org.junit.Assert.*;
  * Created by proj on 1/4/17.
  */
 public class AuftragsVerwaltungTest {
+    AuftragsVerwaltung av;
+
+    @Before
+    public void prepare()
+    {
+        av = new AuftragsVerwaltung();
+    }
+
+    @After
+    public void destroy()
+    {
+        av = null;
+    }
 
     @Test
     public void testIfAuftragIsAddable() throws MyDuplicateElementException, MyNoSuchElementException {
@@ -23,7 +38,7 @@ public class AuftragsVerwaltungTest {
 
         try {
             av.get("a");
-            assertTrue(false);
+            assertTrue(false);Sag doch,
         } catch (MyNoSuchElementException e) {
             assertTrue(true);
             // everything is ok

@@ -27,4 +27,32 @@ public class ParallelProcesserTest {
         for(Integer i : nd)
             assertEquals(i, (Integer)1);
     }
+
+    @Test
+    public void TestRunWithBuilder() throws ParallelProcessorBuilder.InvalidDataException {
+        Integer[] data = new Integer[250000], nd;
+        for (int i = 0; i < 250000; i++)
+            data[i] = i;
+
+        ParallelProcessorBuilder<Integer> builder = ParallelProcessorBuilder.create();
+
+        ParallelProcessor<Integer> pp = builder
+                .withData(data)
+                .withPrint(false)
+                .withThreads(2)
+                .withProcessor(new Processor<Integer>() {
+                    @Override
+                    public Integer process(Integer input) {
+                        return 1;
+                    }
+                })
+                .build();
+
+
+        pp.processInput();
+
+        nd = pp.getInput();
+        for(Integer i : nd)
+            assertEquals(i, (Integer)1);
+    }
 }
