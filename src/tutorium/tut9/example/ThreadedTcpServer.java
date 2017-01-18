@@ -14,15 +14,15 @@ public class ThreadedTcpServer {
         ServerSocket ss = new ServerSocket(1337);
         Socket s;
 
-        while((s = ss.accept()) != null)
+        while(true)
         {
+            s = ss.accept();
             Handler h = new Handler(s);
-            Thread t = new Thread(h);
-            t.start();
+            h.start();
         }
     }
 
-    public class Handler implements Runnable
+    public class Handler extends Thread
     {
         Socket s;
 
