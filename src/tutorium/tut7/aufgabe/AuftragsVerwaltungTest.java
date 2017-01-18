@@ -115,4 +115,10 @@ public class AuftragsVerwaltungTest {
         assertEquals(st.pop().getId(), ref.pop().getId());
         assertEquals(st.pop().getId(), ref.pop().getId());
     }
+
+    @Test
+    public void testAktienSerialisiererReadFromFile() throws IOException, MyDuplicateElementException {
+        AuftragsVerwaltung av = AktienSerialisierer.fromTxt("/tmp/auftraege.txt");
+        assertTrue(av.inhaltAlsListe().size() >= 1000);
+    }
 }

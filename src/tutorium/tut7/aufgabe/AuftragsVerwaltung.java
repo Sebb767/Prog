@@ -8,6 +8,7 @@ import java.util.*;
  */
 public class AuftragsVerwaltung implements Iterable<Auftrag>, Serializable {
     protected HashMap<String, Auftrag> content = new HashMap<>();
+    transient private int test;
 
     public void add(Auftrag at) throws MyDuplicateElementException
     {
@@ -61,12 +62,14 @@ public class AuftragsVerwaltung implements Iterable<Auftrag>, Serializable {
     {
         List<Auftrag> ts = inhaltAlsListe();
 
-        Collections.sort(ts, new Comparator<Auftrag>() {
+        Comparator<Auftrag> myComp = new Comparator<Auftrag>() {
             @Override
             public int compare(Auftrag o1, Auftrag o2) {
                 return o1.getStunden() - o2.getStunden();
             }
-        });
+        };
+
+        Collections.sort(ts, myComp);
 
         return new Stack<>(ts);
     }
