@@ -1,6 +1,12 @@
 package tut10.example;
 
+import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.Comparator;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Created by proj on 1/25/17.
@@ -54,5 +60,20 @@ public class Baum<E extends Comparable<E>> {
     {
         if(root != null)
             root.print();
+    }
+
+    @Test
+    public void testIfListIsEmpty()
+    {
+        ArrayList<Integer> xx = new ArrayList<>();
+        assertTrue(xx.isEmpty());
+    }
+
+    @Test
+    public void testMultiplication()
+    {
+        int a = 2, b = 3;
+        int r = a * b;
+        assertEquals(r, 6);
     }
 }
