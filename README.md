@@ -7,7 +7,7 @@ Siehe [hier](https://github.com/Sebb767/Prog/tree/master/src/tutorium/de/fhws/tu
 
 ## Prog II Tutorium (WS16/17)
 
-Siehe [hier](https://github.com/Sebb767/Prog/tree/master/src/tutorium/).
+Siehe [hier](https://github.com/Sebb767/Prog/tree/master/src/tutorium/ws16).
 
 ## Prog II
 
