@@ -18,7 +18,7 @@ public class RaumTest {
     @Test
     public void testRaumSetAnzahlGroesserNull() throws Exception
     {
-        testraum.setAnzahlStudenten(2);
+        testraum.setRaumDaten(2);
 
         assertEquals(testraum.getAnzahlStudenten(), 2);
     }
@@ -27,7 +27,7 @@ public class RaumTest {
     public void testRaumSetAnzahlGleichNull()
     {
         try {
-            testraum.setAnzahlStudenten(0);
+            testraum.setRaumDaten(0);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,7 +40,7 @@ public class RaumTest {
     {
         try
         {
-            testraum.setAnzahlStudenten(-2);
+            testraum.setRaumDaten(-2);
             assertFalse(true);
         }
         catch (Exception ex)
