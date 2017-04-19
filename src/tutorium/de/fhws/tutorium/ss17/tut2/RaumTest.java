@@ -10,13 +10,13 @@ public class RaumTest {
     protected Raum testraum;
 
     @Before
-    public void setupRaum()
+    public void setupRaum() throws Exception
     {
         testraum = new Raum(0);
     }
 
     @Test
-    public void testRaumSetAnzahlGroesserNull()
+    public void testRaumSetAnzahlGroesserNull() throws Exception
     {
         testraum.setAnzahlStudenten(2);
 
@@ -26,7 +26,11 @@ public class RaumTest {
     @Test
     public void testRaumSetAnzahlGleichNull()
     {
-        testraum.setAnzahlStudenten(0);
+        try {
+            testraum.setAnzahlStudenten(0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         assertEquals(testraum.getAnzahlStudenten(), 0);
     }
@@ -39,7 +43,7 @@ public class RaumTest {
             testraum.setAnzahlStudenten(-2);
             assertFalse(true);
         }
-        catch (IllegalArgumentException ex)
+        catch (Exception ex)
         {
             assertTrue(true);
         }
