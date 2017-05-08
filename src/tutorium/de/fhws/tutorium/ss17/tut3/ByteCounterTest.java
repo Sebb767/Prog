@@ -60,4 +60,13 @@ public class ByteCounterTest {
 
         assertEquals(819972, count);
     }
+
+    @Test
+    public void testWithPdf() throws IOException
+    {
+        InputStream is = new FileInputStream("/tmp/Progammieren 2 Tutorium - Stunde 3.pdf");
+        int count = CountBytes(is);
+
+        assertEquals(526, count);
+    }
 }
