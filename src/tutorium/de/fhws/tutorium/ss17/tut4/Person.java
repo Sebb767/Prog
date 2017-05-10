@@ -1,6 +1,8 @@
 package de.fhws.tutorium.ss17.tut4;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
     protected String name, nachname;
     protected int alter;
 
