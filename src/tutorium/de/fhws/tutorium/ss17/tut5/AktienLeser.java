@@ -57,7 +57,7 @@ public class AktienLeser {
         aktien.forEach(a -> sla.get(a.getSektor()).add(a));
         sektoren.forEach(s -> {
             sla.get(s).stream()
-                    .mapToDouble(ak -> ak.getPreis())
+                    .mapToDouble(Aktie::getPreis)
                     .average()
                     .ifPresent(avg -> System.out.printf("Sektor %s: %.2f\n", s, avg));
         });
