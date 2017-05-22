@@ -34,18 +34,11 @@ public class IntArrayQueueTest {
         assertTrue(iaq.empty());
     }
 
-    @Test
-    public void testQueueException()
+    @Test(expected = QueueEmptyException.class)
+    public void testQueueException() throws QueueEmptyException
     {
         assertTrue(iaq.empty());
 
-        try {
-            iaq.dequeue();
-            assertTrue(false);
-        }
-        catch (QueueEmptyException ex)
-        {
-            assertTrue(true);
-        }
+        iaq.dequeue();
     }
 }
