@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
@@ -51,15 +53,9 @@ public class AktienLeser {
 
     public void ausgeben()
     {
-        HashMap<String, List<Aktie>> sla = new HashMap<>();
-
-        sektoren.forEach(s -> sla.put(s, new ArrayList<>()));
-        aktien.forEach(a -> sla.get(a.getSektor()).add(a));
-        sektoren.forEach(s -> {
-            sla.get(s).stream()
-                    .mapToDouble(Aktie::getPreis)
-                    .average()
-                    .ifPresent(avg -> System.out.printf("Sektor %s: %.2f\n", s, avg));
+        aktien.stream().collect(Collectors.groupingBy(Aktie::getSektor)).forEach((sektor, inhalt) -> {
+            inhalt.stream().mapToDouble(Aktie::getPreis).average()
+                    .ifPresent(avg -> System.out.printf("Sektor %s: %.2f\n", sektor, avg));
         });
     }
 
