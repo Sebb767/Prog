@@ -3,7 +3,7 @@ package de.fhws.tutorium.ss17.tut5;
 /**
  * Created by proj on 5/10/17.
  */
-public class Aktie {
+public class Aktie implements Comparable<Aktie> {
     protected String symbol, sektor;
     protected double preis;
 
@@ -19,6 +19,11 @@ public class Aktie {
         this.symbol = symbol;
         this.sektor = sektor;
         this.preis = preis;
+    }
+
+    @Override
+    public int compareTo(Aktie o) {
+        return o == null ? 1 : sektor.compareTo(o.getSektor());
     }
 
     public String getSymbol() {
