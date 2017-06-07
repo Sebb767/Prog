@@ -34,10 +34,9 @@ public class Queue<T> implements Iterable<T> {
         return lst.isEmpty();
     }
 
-    @Override
-    public Iterator<T> iterator() {
-        //return lst.iterator(); // faule Methode
-        return new QueueIterator<T>(lst);
+    public Iterator<T> iterator()
+    {
+        return new QueueIteratorZwei<T>(lst);
     }
 
     public static void main(String[] args) {
@@ -47,16 +46,21 @@ public class Queue<T> implements Iterable<T> {
         mq.enqueue("Asd 2");
 
         try {
-            if(!mq.dequeue().equals("Asd 1"))
+            for(String s : mq)
+            {
+                System.out.println(s);
+            }
+
+            /*if(!mq.dequeue().equals("Asd 1"))
                 System.out.printf("Der zurückgegebene String war falsch!");
 
             if(!mq.dequeue().equals("Asd 2"))
                 System.out.printf("Der zurückgegebene String war falsch!");
 
             System.out.println("Jetzt sollte Exception sein:");
-            mq.dequeue();
+            mq.dequeue();*/
         }
-        catch (QueueEmptyException ex)
+        catch (Exception ex)
         {
             ex.printStackTrace();
         }
