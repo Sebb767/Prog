@@ -1,7 +1,6 @@
 package de.fhws.tutorium.ss17.tut7;
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * Created by Sebastian Kaim on 6/14/17.
@@ -39,8 +38,17 @@ public class Roulette implements Iterable<Integer> {
 
     public static void main(String[] args) {
         Roulette r = new Roulette();
+        List<Integer> st = new ArrayList<Integer>();
 
         for(int i : r)
+        {
+            if(!st.contains(i))
+                st.add(i);
+        }
+
+        Collections.sort(st);
+
+        for(int i : st)
         {
             System.out.println(i);
         }
