@@ -13,7 +13,7 @@ public class ThreadExample implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 250; i++) {
+        for (int i = 0; i < 250000; i++) {
             System.out.printf("%d: %d\n", nr, counter++);
         }
     }
