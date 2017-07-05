@@ -10,24 +10,19 @@ public class YYThread {
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
-                while(true)
-                {
-                    System.out.println("Yang");
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
+               PrintLoop("Yang");
             }
         });
         t.start();
 
+        PrintLoop("Yin");
+    }
 
-
+    public void PrintLoop(String output)
+    {
         while(true)
         {
-            System.out.println("Yin");
+            System.out.println(output);
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
